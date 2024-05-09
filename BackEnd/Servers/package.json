@@ -1,0 +1,36 @@
+{
+  "name": "talkbackserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:Authentication-Server": "node ./Authentication-Server/app.js",
+    "start:Chat-Server": "node ./Chat-Server/app.js",
+    "start:Game": "node ./Game-Server/app.js",
+    "start:OnlineUsers": "node ./Online-Users-Server/app.js",
+    "start:all": "concurrently \"npm run start:Authentication-Server\" \"npm run start:Chat-Server\" \"npm run start:Game\" \"npm run start:OnlineUsers\"",
+    "start:all-nogame": "concurrently \"npm run start:AccessControl\" \"npm run start:Chat\" \"npm run start:OnlineUsers\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "express-validator": "^7.0.1",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "redis": "^4.6.13",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
